@@ -45,7 +45,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+a {text-decoration:none; color:#333;}
 
+/* background noise*/
+body:after{
+    content:'';
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(../img/noise.gif);
+    opacity: 0.1;
+    z-index: 1;
+    
+}
 
 /* smooth scrolling */
 html{
@@ -54,7 +68,6 @@ html{
 html, body{
     margin:0;
     padding:0;
-    cursor:none;
 }
 body{
     overflow: hidden;
@@ -67,5 +80,117 @@ body{
     top:0;
     left:0;
     overflow:hidden;
+}
+
+/* nav */
+.menu-overlay{
+    position:absolute;
+    width:100%;
+    height:100vh;
+}
+.block{
+    position:absolute;
+    width:0%;
+    height:100vh;
+    background:#101010;
+    right:0;
+}
+
+.menu .menu_list{
+    margin:0;
+    padding:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+    z-index: 1;
+    list-style: none;
+        z-index: 100;
+}
+.menu .menu_list li{
+    padding:12px 0;
+    color:#fff;
+    font-size:150px;
+    font-weight:bolder;
+    
+}
+.menu .menu_list li a{
+    color:#fff;
+    position:relative;
+}
+.menu .menu_list li a:after{
+    content:'';
+    display: block;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:0;
+    height:10px;
+    background:#fff;
+    transition:all .3s ease;
+}
+.menu .menu_list li a:hover:after{
+    width:110%;
+}
+.menu-btn{
+    position:fixed;
+    right:0;
+    margin:30px;
+    z-index: 100;
+}
+.menu-btn span{
+    position:absolute;
+    right: 0;
+  display: block;
+  width: 35px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+.menu-btn input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; 
+  z-index: 2; 
+  -webkit-touch-callout: none;
+}
+
+.menu-btn span.one{
+  transform-origin: 0% 0%;
+    width:23px;
+}
+
+.menu-btn span.two{
+  transform-origin: 0% 100%;
+    width:28px;
+}
+.menu-btn input:checked ~ span{
+  opacity: 1;
+  transform: rotate(-45deg) translate(-10px, -1px);
+  background: #fff;
+}
+
+.menu-btn input:checked ~ span.one
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menu-btn input:checked ~ span.two
+{
+  transform: rotate(45deg) translate(-10px, -1px);
+  width: 35px;
 }
 
