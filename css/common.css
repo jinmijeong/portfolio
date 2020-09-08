@@ -47,7 +47,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-a {text-decoration:none; color:#333;}
+a {text-decoration:none; color:#333; cursor:default;}
 
 
 /* background noise*/
@@ -83,6 +83,22 @@ body{
     width: 100%;
 }
 
+/* custom cursor */
+body{cursor: none;}
+ body .cursor {
+  pointer-events: none;
+}
+body .cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+body .cursor__ball circle {
+  fill: #f7f8fa;
+}
+
 
 /* nav */
 nav{ 
@@ -96,7 +112,7 @@ nav .logo{
     position: fixed;
     left: 0;
     margin: 26px 30px;
-    z-index: 5;
+    z-index: 100;
     top: 0;
 }
 nav .logo h3 a{
@@ -139,9 +155,6 @@ nav .logo h3 a span{
     display: none;
     z-index: 100;
 }
-.menu .menu_list.active{
-    z-index: 100;
-}
 .menu .menu_list li{
     padding:12px 0;
     color:#fff;
@@ -156,6 +169,7 @@ nav .logo h3 a span{
     font-family: 'Syncopate', sans-serif;
     font-weight:700;
     text-transform: uppercase;
+    cursor:default
 }
 .menu .menu_list li a:after{
     content:'';
