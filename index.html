@@ -60,7 +60,17 @@
                                 <img src="img/ring.png" alt="">
                             </div>
                             <div class="main_title">
-                                <h1>PORTFOLIO</h1>
+                                <ul class="title_wrap">
+                                    <li class="title_item" data-text="P">p</li>
+                                    <li class="title_item" data-text="O">o</li>
+                                    <li class="title_item" data-text="R">r</li>
+                                    <li class="title_item" data-text="T">t</li>
+                                    <li class="title_item" data-text="F">f</li>
+                                    <li class="title_item" data-text="O">o</li>
+                                    <li class="title_item" data-text="L">l</li>
+                                    <li class="title_item" data-text="I">i</li>
+                                    <li class="title_item" data-text="O">o</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -145,8 +155,14 @@
         width: '60%',
         ease: Expo.easeInOut
     }, "-=5");
-
-
+    
+     TweenMax.staggerFrom('.title_item', 1, {
+            ease: Back.easeOut,
+            opacity: 0,
+            y: 100,
+            delay: 6.5,
+        }, 0.1);
+    
 </script>
 <script>
     // smooth scroll
