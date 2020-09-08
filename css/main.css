@@ -8,7 +8,12 @@
 .loader_wrap {
     overflow: hidden;
 }
-
+.loader {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 .ring {
     margin: 0%;
     padding: 0%;
@@ -20,14 +25,6 @@
     width: 40%;
     opacity: 0.7;
 }
-
-.loader {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
 .ring img {
     width: 100%;
 }
@@ -48,4 +45,34 @@
     to {
         transform: rotate(360deg);
     }
+}
+.loader .main_title{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+    
+}
+.loader .main_title h1{
+    font-size:90px;
+    font-weight:700;
+    color:#fff;
+   text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+.loader .main_title h1 {
+    font-size: 24px !important;
+  }
+}
+
+.main_title  .letter {
+  display: inline-block;
+  opacity: 0;
+  font-size: 90px;
+  color: white;
+  text-transform: uppercase ;
+    font-weight:700;
+    font-family:'Syncopate','Montserrat', sans-serif;
 }
