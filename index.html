@@ -16,15 +16,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <!-- ANIMEJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
-    <!-- include script -->
-    <script src="js/includeHTML.js"></script>
+    <!-- include script >
+    <script src="js/includeHTML.js"></script-->
 
 </head>
 
 <body>
-    <div id="wrap">
-        <nav include-html="common/nav.html"></nav>
+    <div id="mainWrap" class="wrap">
+        <!--nav include-html="common/nav.html"></nav-->
+        <nav>
+            <div class="logo">
+                <h3><a href="index.html">MITORING <span>;</span></a></h3>
+            </div>
+            <div class="menu-overlay">
+                <div class="block"></div>
+            </div>
+            <div class="menu">
+                <ul class="menu_list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="menu-btn">
+                <input type="checkbox" />
+                <span class="one"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+            </div>
+        </nav>
         <article id="container">
             <div class="smooth-scroll-wrapper">
                 <div class="content">
@@ -55,114 +76,20 @@
                 </div>
             </div>
         </article>
-        <footer include-html="common/footer.html"></footer>
+        <!--footer include-html="common/footer.html"></footer-->
+        <footer>
+            <div class="copyright">
+    <p>© 2020 JINMIJEONG. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 </body>
 <!-- JQuery -->
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/TweenMax.min.js"></script>
-<script>
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
+<!--script>
     includeHTML();
-</script>
-<script type="text/javascript">
-    /* menu */
-
-    var t1 = new TimelineMax({
-        paused: true
-    });
-
-    t1.to('.block', 0.4, {
-        width: "100%",
-        ease: Power4.easeInOut
-    });
-
-    t1.staggerFrom(".menu ul li", 0.5, {
-        y: 40,
-        opacity: 0,
-        ease: Power2.easeOut,
-        zIndex: -1,
-    }, 0.15);
-
-    t1.reverse();
-
-    $(document).ready(function() {
-        $('.menu-btn').click(function() {
-            t1.reversed(!t1.reversed());
-            $('.menu ul').fadeToggle();
-        })
-    })
-
-    /* loader */
-
-    TweenMax.from(".menu-btn", 3, {
-        delay: 5,
-        opacity: 0,
-        y: 20,
-        ease: Expo.easeInOut
-    });
-
-    TweenMax.from(".logo", 3, {
-        delay: 5,
-        opacity: 0,
-        y: 20,
-        ease: Expo.easeInOut
-    });
-
-    var t2 = new TimelineMax();
-    var imgWidth = -$('.ring img').width()
-    var imgHeight = -$('.ring img').height()
-    t2.from(".ringOne", 4, {
-        delay: 0.2,
-        opacity: 0,
-        y: 40,
-        ease: Expo.easeInOut
-    }).from(".ringTwo", 4, {
-        delay: 0.9,
-        opacity: 0,
-        y: 40,
-        ease: Expo.easeInOut
-    }, "-=5").to(".ringOne", 4, {
-        delay: 0.2,
-        y:'-50%',
-        x:'-50%',
-        width: '59%',
-        ease: Expo.easeInOut
-    }).to(".ringTwo", 4, {
-        delay: 0.9,
-         y:'-50%',
-        x:'-50%',
-        width: '60%',
-        ease: Expo.easeInOut
-    }, "-=5");
-
-    TweenMax.staggerFrom('.title_item', 1, {
-        ease: Back.easeOut,
-        opacity: 0,
-        y: 100,
-        delay: 6.5,
-    }, 0.1);
-</script>
-<script>
-    // smooth scroll
-    const body = document.body,
-        scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
-        height = scrollWrap.getBoundingClientRect().height - 1,
-        speed = 0.04;
-
-    var offset = 0;
-
-    body.style.height = Math.floor(height) + "px";
-
-    function smoothScroll() {
-        offset += (window.pageYOffset - offset) * speed;
-
-        var scroll = "translateY(-" + offset + "px) translateZ(0)";
-        scrollWrap.style.transform = scroll;
-
-        callScroll = requestAnimationFrame(smoothScroll);
-    }
-
-    smoothScroll();
-</script>
-
+</script-->
 </html>

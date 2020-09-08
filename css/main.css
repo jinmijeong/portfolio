@@ -1,5 +1,10 @@
+#mainWrap{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow: hidden;
+}
 /* background noise*/
-
 .content {
     background: #1f1f1f;
     z-index: 10;

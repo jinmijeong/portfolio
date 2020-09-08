@@ -96,12 +96,12 @@ nav .logo{
     position: fixed;
     left: 0;
     margin: 26px 30px;
-    z-index: 100;
+    z-index: 5;
     top: 0;
 }
 nav .logo h3 a{
     font-weight:700;
-    color:#fff;
+    color:#cdcdcd;
     letter-spacing: -0.5px;
     font-size: 16px;
 }
@@ -240,3 +240,16 @@ nav .logo h3 a span{
     height:100%;
 }
 
+
+/* footer */
+.copyright{
+    position:absolute;
+    bottom:20px;
+    right:30px;
+    z-index:5;
+}
+.copyright p {
+    color:#cdcdcd;
+    font-size:12px;
+
+}
