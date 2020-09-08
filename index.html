@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/main.css">
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <!-- icons -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <!-- gsap -->
@@ -23,11 +23,39 @@
 
 <body>
     <div id="wrap">
-        <nav include-html="common/nav.html"></nav>
+        <!--nav include-html="common/nav.html"></nav-->
+        <nav>
+            <div class="menu-overlay">
+                <div class="block"></div>
+            </div>
+            <div class="menu">
+                <ul class="menu_list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="menu-btn">
+                <input type="checkbox" />
+                <span class="one"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+            </div>
+        </nav>
         <article id="container">
             <div class="smooth-scroll-wrapper">
                 <div class="content">
-
+                    <div class="loader_wrap">
+                        <div class="loader">
+                            <div class="ringOne ring">
+                                <img src="img/ring.png" alt="">
+                            </div>
+                            <div class="ringTwo ring">
+                                <img src="img/ring.png" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>
@@ -41,6 +69,8 @@
     includeHTML();
 </script>
 <script type="text/javascript">
+    /* menu */
+
     var t1 = new TimelineMax({
         paused: true
     });
@@ -53,7 +83,8 @@
     t1.staggerFrom(".menu ul li", 0.5, {
         y: 40,
         opacity: 0,
-        ease: Power2.easeOut
+        ease: Power2.easeOut,
+        zIndex: -1,
     }, 0.15);
 
     t1.reverse();
@@ -63,6 +94,42 @@
             t1.reversed(!t1.reversed());
         })
     })
+
+    /* loader */
+
+    TweenMax.from(".menu-btn", 3, {
+        delay: 5,
+        opacity: 0,
+        y: 20,
+        ease: Expo.easeInOut
+    });
+
+    var t2 = new TimelineMax();
+    var imgWidth = -$('.ring img').width()
+    var imgHeight = -$('.ring img').height()
+    t2.from(".ringOne", 4, {
+        delay: 0.4,
+        opacity: 0,
+        y: 40,
+        ease: Expo.easeInOut
+    }).from(".ringTwo", 4, {
+        delay: 0.9,
+        opacity: 0,
+        y: 40,
+        ease: Expo.easeInOut
+    }, "-=5").to(".ringOne", 4, {
+        delay: 0.4,
+        marginLeft:imgWidth/2.5,
+        marginTop:imgHeight/2.5,
+        width: '70%',
+        ease: Expo.easeInOut
+    }).to(".ringTwo", 4, {
+        delay: 0.9,
+         marginLeft:imgWidth/2.5,
+        marginTop:imgHeight/2.5,
+        width: '70%',
+        ease: Expo.easeInOut
+    }, "-=5");
 </script>
 <script>
     // smooth scroll
