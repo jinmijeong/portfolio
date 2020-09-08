@@ -136,8 +136,11 @@ nav .logo h3 a span{
     transform:translate(-50%,-50%);
     text-align: center;
     list-style: none;
+    display: none;
     z-index: 100;
-    
+}
+.menu .menu_list.active{
+    z-index: 100;
 }
 .menu .menu_list li{
     padding:12px 0;

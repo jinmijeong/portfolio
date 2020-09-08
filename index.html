@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <!-- ANIMEJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    
+
     <!-- include script -->
     <script src="js/includeHTML.js"></script>
 
@@ -93,7 +93,7 @@
         paused: true
     });
 
-    t1.to('.block', 0.5, {
+    t1.to('.block', 0.4, {
         width: "100%",
         ease: Power4.easeInOut
     });
@@ -110,6 +110,7 @@
     $(document).ready(function() {
         $('.menu-btn').click(function() {
             t1.reversed(!t1.reversed());
+            $('.menu ul').fadeToggle();
         })
     })
 
@@ -144,25 +145,24 @@
         ease: Expo.easeInOut
     }, "-=5").to(".ringOne", 4, {
         delay: 0.2,
-        marginLeft: imgWidth / 4,
-        marginTop: imgHeight / 4,
+        y:'-50%',
+        x:'-50%',
         width: '59%',
         ease: Expo.easeInOut
     }).to(".ringTwo", 4, {
         delay: 0.9,
-        marginLeft: imgWidth / 4,
-        marginTop: imgHeight / 4,
+         y:'-50%',
+        x:'-50%',
         width: '60%',
         ease: Expo.easeInOut
     }, "-=5");
-    
-     TweenMax.staggerFrom('.title_item', 1, {
-            ease: Back.easeOut,
-            opacity: 0,
-            y: 100,
-            delay: 6.5,
-        }, 0.1);
-    
+
+    TweenMax.staggerFrom('.title_item', 1, {
+        ease: Back.easeOut,
+        opacity: 0,
+        y: 100,
+        delay: 6.5,
+    }, 0.1);
 </script>
 <script>
     // smooth scroll
