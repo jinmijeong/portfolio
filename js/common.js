@@ -22,6 +22,7 @@
      $('.menu-btn').click(function () {
          t1.reversed(!t1.reversed());
          $('.menu ul').fadeToggle();
+         
      })
  })
 

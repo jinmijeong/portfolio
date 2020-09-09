@@ -1,0 +1,32 @@
+#aboutWrap{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow: hidden;
+}
+.about_wrap{
+    position:absolute;
+    top: 0;
+    width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.about_bg{
+position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background: url('../img/about_bg.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.main_title{
+        font-size: 100px;
+    color: #fff;
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -2px;
+    
+}

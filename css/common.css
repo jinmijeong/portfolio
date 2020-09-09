@@ -63,7 +63,7 @@ body:after{
     z-index: 99;
     
 }
-
+.wrap{background:#1f1f1f;}
 
 /* smooth scrolling */
 html{
@@ -156,7 +156,7 @@ nav .logo h3 a span{
     z-index: 100;
 }
 .menu .menu_list li{
-    padding:12px 0;
+        padding: 25px 0;
     color:#fff;
     font-size:90px;
     font-weight:bolder;
@@ -214,7 +214,6 @@ nav .logo h3 a span{
   position: absolute;
   top: -7px;
   left: -5px;
-  cursor: pointer;
   opacity: 0; 
   z-index: 2; 
   -webkit-touch-callout: none;

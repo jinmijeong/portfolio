@@ -4,11 +4,6 @@
     height:100vh;
     overflow: hidden;
 }
-/* background noise*/
-.content {
-    background: #1f1f1f;
-    z-index: 10;
-}
 
 /* loader */
 .loader_wrap {
@@ -64,7 +59,9 @@
     text-align: center;
 
 }
-
+.loader .main_title a{
+    display:block;
+}
 .loader .title_wrap {
     display: flex;
     justify-content: center;
