@@ -1,6 +1,18 @@
+// about background
 TweenMax.from('.about_bg', 2, {
     opacity: 0,
     delay: 0.5
+})
+
+TweenMax.from('.about_circle', 2, {
+    opacity: 0,
+    delay: 2,
+    y:50
+})
+TweenMax.to('.about_circle img',10,{
+    rotation:360, 
+    repeat:-1, 
+    ease:Linear.easeNone
 })
 
 
@@ -25,3 +37,17 @@ function touches(e) {
 window.addEventListener("mousemove", touches);
 window.addEventListener("touchstart", touches);
 window.addEventListener("touchmove", touches);
+
+
+// animation
+const textrev = gsap.timeline();
+
+            textrev.from(".line span",2, {
+                y: 200,
+                ease: "power4.out",
+                delay: 1.2,
+                skewY: 10,
+                stagger: {
+                    amount: 2,
+                },
+            });

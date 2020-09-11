@@ -1,32 +1,117 @@
-#aboutWrap{
-    position:relative;
-    width:100%;
-    height:100vh;
+#aboutWrap {
+    position: relative;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
 }
-.about_wrap{
-    position:absolute;
+
+.about_wrap {
+    position: absolute;
     top: 0;
     width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-.about_bg{
-position: absolute;
-  width: 120%;
-  height: 120%;
-  top: -10%;
-  left: -10%;
-  background: url('../img/about_bg.jpg') center center no-repeat;
-  background-size: cover;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.main_title{
-        font-size: 100px;
-    color: #fff;
+.about_bg {
     position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: url('../img/about_bg.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.about_content {
+    position: relative;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 11;
+}
+
+.about {
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about .line {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about .line_title {
+    height: 120px;
+}
+
+.about .line span {
+    position: absolute;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+.about .main_title {
+    font-size: 100px !important;
+    color: #fff;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: -2px;
-    
+    line-height: 1 !important;
+}
+
+.sub_title {
+    font-size: 16px !important;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.contact .line {
+    width: 340px;
+}
+
+.about .line span a {
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 1.8;
+}
+
+.about_circle {
+    position: absolute;
+    bottom: -120px;
+    right: -80px;
+    width: 450px;
+}
+.about_circle img {
+    width: 100%;
+}
+
+
+@media (max-width: 900px) {
+    .about .main_title {
+        font-size: 30px;
+    }
+
+    .about .line span {
+        font-size: 12px;
+    }
 }
